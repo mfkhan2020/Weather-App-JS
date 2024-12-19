@@ -255,3 +255,20 @@ window.onclick = function(event) {
   }
 }
 // Signup Modal end
+
+// Local Storage Code
+
+// Signup Code Start
+
+
+function signup_function() {
+  let signup_uname = document.getElementById("signup-uname").value;
+  let signup_pwd = document.getElementById("signup-pwd").value;
+  let loc_store = localStorage.setItem(user, signup_uname, signup_pwd);
+
+  let newUser = {
+    UserName : signup_uname;
+    Password : signup_pwd;
+  }
+}
+// Signup Code End
