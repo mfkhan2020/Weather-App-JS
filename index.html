@@ -6,14 +6,49 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>WEATHER APP</h1>
-    <input type="text" name="" id="user-city">
-    <button type="submit" onclick="check_weather()">Check Weather</button>
+<body class="">
+    <div class="main-container">
+        <div class="navbar-div">
+            <label class="switch">
+                <input type="checkbox" id="toggleCheckbox">
+                <span class="slider round"></span>
+            </label>
+            <button id="login-btn">Login</button>
+            <button id="signup-btn">Signup</button>
+        </div>
+        <div class="head">
+            
+            <h1 class="main-heading">WEATHER APP</h1>
+            <input type="text" name="" id="user-city">
+            <button type="submit" onclick="check_weather()" id="btn1">Check Weather</button>
+            <button type="submit" onclick="add_weather()" id="add-btn"><span> + </span> Add Weather</button>
+        </div>
+        <div id="main-data-container"></div>
+    </div>
 
-    <p id="para1"></p>
-    <p id="para2"></p>
-    <p id="para3"></p>
+    <!-- LogIn Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1 class="modal-head">Start Weather Forecast</h1>
+        <label for="" class="modal-label">UserName : <input type="text" id="login-uname" class="modal-input"></label>
+        <label for="" class="modal-label">PassWord : <input type="password" id="login-pwd" class="modal-input"></label>
+        <button type="submit" class="modal-btn">Log In</button>
+        </div>
+    </div>
+
+    <!-- SignUp Modal -->
+    <div id="myModal1" class="modal1">
+        <!-- Modal content -->
+        <div class="modal1-content">
+        <span class="close1">&times;</span>
+        <h1 class="modal-head">Register for Weather Forecast</h1>
+        <label for="" class="modal-label">UserName : <input type="text" id="login-uname" class="modal-input"></label>
+        <label for="" class="modal-label">PassWord : <input type="password" id="login-pwd" class="modal-input"></label>
+        <button type="submit" class="modal-btn">Sign Up</button>
+        </div>
+    </div>
 <script src="main.js"></script>
 </body>
 </html>
