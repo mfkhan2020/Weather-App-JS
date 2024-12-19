@@ -267,8 +267,8 @@ function signup_function() {
   let loc_store = localStorage.setItem(user, signup_uname, signup_pwd);
 
   let newUser = {
-    UserName : signup_uname;
-    Password : signup_pwd;
+    UserName : signup_uname,
+    Password : signup_pwd
   }
 }
 // Signup Code End
