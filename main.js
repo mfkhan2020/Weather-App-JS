@@ -264,37 +264,48 @@ let users = localStorage.getItem("users");
 let user_list = users ? JSON.parse(users) : [];
 
 function signup_function() {
-  let signup_uname = document.getElementById("signup-uname").value;
-  let signup_pwd = document.getElementById("signup-pwd").value;
+  let Uname = document.getElementById("signup-uname").value;
+  let Upwd = document.getElementById("signup-pwd").value;
 
-  console.log(signup_uname);
-  
-  
-  if (signup_uname && signup_pwd) {
-    let new_users = { signup_uname, signup_pwd };
+  // console.log(signup_uname);
+  let found = user_list.find(users => users.Uname === Uname);
+  if (found){
+    alert(`UserName Already Taken! 
+      Login Please.`)}
+    else{
+    let new_users = { Uname, Upwd };
     user_list.push(new_users);
     console.log(user_list);
     
     localStorage.setItem("users", JSON.stringify(user_list));
     alert("Sign-Up Successful! Please Login.");
-   // window.location.href = "login.html"; // Redirect to Login page
-  } else {
-    alert("Please fill all fields.");
   }
+  
+  // if (Uname && Upwd) {
+  //   let new_users = { Uname, Upwd };
+  //   user_list.push(new_users);
+  //   console.log(user_list);
+    
+  //   localStorage.setItem("users", JSON.stringify(user_list));
+  //   alert("Sign-Up Successful! Please Login.");
+  //  // window.location.href = "login.html"; // Redirect to Login page
+  // } else {
+  //   alert("Please fill all fields.");
+  // }
 }
 // Signup Code End
 
 // Login Code start
 function login_function() {
-  let uname = document.getElementById("login-uname").value;
-  let pwd = document.getElementById("login-pwd").value;
+  let Uname = document.getElementById("login-uname").value;
+  let Upwd = document.getElementById("login-pwd").value;
 
-  let found = user_list.find(users => users.name === uname && users.pwd === pwd);
+  let found = user_list.find(users => users.Uname === Uname && users.Upwd === Upwd);
 
   if (found) {
     alert("Login Successful!");
-    localStorage.setItem("currentUser", uname); // Store logged-in user
-    //window.location.href = "hero.html"; // Redirect to Hero page
+    localStorage.setItem("currentUser", Uname); // Store logged-in user
+    window.location.href = "home.html";
   } else {
     alert("Invalid Credentials.");
   }
